@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rukhsar Shamoon | Performance Creative Analyst</title>
+<meta name="description" content="Rukhsar Shamoon — Performance Creative Analyst, Ads Operations &amp; Media Buyer. Meta Ads, Native Ads, ROAS/CPA optimization, ads operations leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E13;
+    --panel:#11151C;
+    --text:#ECEAE2;
+    --dim:#96A0AC;
+    --accent:#FFB020;
+    --accent-2:#3E8E8E;
+    --line: rgba(236,234,226,0.14);
+    --line-soft: rgba(236,234,226,0.08);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top: 84px; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Space Grotesk','Segoe UI',Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--accent); color:#0B0E13; }
+  a{ color:inherit; }
+  img{ max-width:100%; }
+  .mono{ font-family:'IBM Plex Mono','Courier New',monospace; }
+  .wrap{ max-width:1140px; margin:0 auto; padding:0 clamp(20px,4vw,32px); }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0;
+    top: env(safe-area-inset-top, 0px);
+    z-index:300;
+    background:rgba(11,14,19,0.96);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .headbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px clamp(20px,4vw,32px);
+    max-width:1140px; margin:0 auto;
+  }
+  .brand{ font-weight:700; font-size:16px; letter-spacing:0.02em; text-decoration:none; white-space:nowrap; }
+  .brand span{ color:var(--accent); }
+  nav#primary-nav ul{ list-style:none; display:flex; gap:26px; margin:0; padding:0; }
+  nav#primary-nav a{
+    text-decoration:none; color:var(--dim); font-size:13.5px;
+    font-family:'IBM Plex Mono',monospace; transition:color .18s ease;
+  }
+  nav#primary-nav a:hover, nav#primary-nav a:focus-visible{ color:var(--text); }
+
+  .burger{
+    display:none;
+    background:none; border:1px solid var(--line); border-radius:2px;
+    width:40px; height:36px; padding:0; cursor:pointer;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  }
+  .burger span{ width:18px; height:1.5px; background:var(--text); display:block; transition:transform .2s ease, opacity .2s ease; }
+  .burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+
+  section{ border-bottom:1px solid var(--line-soft); }
+  .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--accent); margin:0 0 14px; letter-spacing:0.02em; }
+  .section-head{ max-width:640px; margin-bottom:48px; }
+  .section-head h2{ font-size:clamp(24px,3.4vw,34px); font-weight:600; letter-spacing:-0.01em; margin:0 0 12px; }
+  .section-head p{ color:var(--dim); font-size:15.5px; margin:0; max-width:52ch; }
+  .pad{ padding:88px 0; }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:96px 0 0; border-bottom:none; }
+  .hero-in{ padding-bottom:56px; max-width:760px; }
+  .kicker{ font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--dim); margin:0 0 20px; }
+  h1{
+    font-size:clamp(32px,6vw,56px); line-height:1.1; margin:0 0 26px;
+    font-weight:600; letter-spacing:-0.01em;
+  }
+  h1 em{ color:var(--accent); font-style:normal; }
+  .lede{ color:var(--dim); font-size:17px; max-width:58ch; margin:0 0 34px; }
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:13px 22px;
+    background:var(--accent); color:#14100A; text-decoration:none;
+    font-weight:600; font-size:14.5px; border-radius:2px;
+    transition:transform .15s ease, background .15s ease; white-space:nowrap;
+  }
+  .btn:hover, .btn:focus-visible{ background:#ffc352; transform:translateY(-1px); }
+  .btn.ghost{ background:transparent; color:var(--text); border:1px solid var(--line); font-weight:500; }
+  .btn.ghost:hover, .btn.ghost:focus-visible{ border-color:var(--accent); color:var(--accent); background:transparent; transform:translateY(-1px); }
+  .contact-line{ font-family:'IBM Plex Mono',monospace; color:var(--dim); font-size:13px; margin-top:28px; }
+  .contact-line a{ text-decoration:none; }
+  .contact-line a:hover{ color:var(--accent); }
+
+  /* ---------- How I Work ---------- */
+  .work-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line-soft); border:1px solid var(--line-soft);
+  }
+  .work-cell{ background:var(--bg); padding:32px 26px; }
+  .work-cell .n{ font-family:'IBM Plex Mono',monospace; color:var(--accent-2); font-size:13px; margin-bottom:18px; }
+  .work-cell h3{ font-size:16.5px; margin:0 0 10px; font-weight:600; }
+  .work-cell p{ color:var(--dim); font-size:14px; margin:0; }
+
+  /* ---------- Ticker ---------- */
+  .ticker-wrap{
+    border-bottom:1px solid var(--line-soft); border-top:1px solid var(--line-soft);
+    background:var(--panel); overflow:hidden; padding:20px 0;
+  }
+  .ticker-track{ display:flex; width:max-content; animation:scroll-ticker 30s linear infinite; }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation:none; overflow-x:auto; } }
+  .ticker-track .set{ display:flex; }
+  .tick2{ font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--dim); padding:0 22px; white-space:nowrap; }
+  .tick2 b{ color:var(--text); font-weight:500; }
+  .tick2 .dia{ color:var(--accent); margin-left:22px; }
+  @keyframes scroll-ticker{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ---------- About ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.5fr 1fr; gap:60px; align-items:start; }
+  .about-grid h2{ font-size:clamp(22px,3vw,30px); font-weight:600; line-height:1.3; margin:0 0 22px; letter-spacing:-0.01em; }
+  .about-grid p{ color:var(--dim); font-size:15.5px; margin:0 0 16px; max-width:56ch; }
+  .about-grid strong{ color:var(--text); font-weight:600; }
+  .focus-box{ border:1px solid var(--line); padding:24px; border-radius:2px; }
+  .focus-box .k{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--dim); margin-bottom:14px; display:block; }
+  .focus-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .focus-chips span{ font-size:13px; color:var(--text); border:1px solid var(--line); padding:6px 11px; border-radius:2px; }
+
+  /* ---------- Capabilities ---------- */
+  .cap-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
+  .cap-cell{ background:var(--bg); padding:34px 30px; }
+  .cap-cell .n{ font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:13px; margin-bottom:16px; }
+  .cap-cell h3{ font-size:18px; margin:0 0 10px; font-weight:600; }
+  .cap-cell p{ color:var(--dim); font-size:14.5px; margin:0; line-height:1.6; }
+
+  /* ---------- Experience ---------- */
+  .job{ display:grid; grid-template-columns:150px 1fr; gap:30px; padding:34px 0; border-bottom:1px solid var(--line-soft); }
+  .job:first-child{ padding-top:0; }
+  .job:last-child{ border-bottom:none; }
+  .job .when{ font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--accent-2); padding-top:3px; }
+  .job h3{ margin:0 0 2px; font-size:19px; font-weight:600; }
+  .job .org{ color:var(--dim); font-size:14px; margin:0 0 14px; font-family:'IBM Plex Mono',monospace; }
+  .job ul{ margin:0; padding-left:18px; color:var(--dim); }
+  .job li{ margin-bottom:8px; font-size:15px; line-height:1.55; }
+  .job li::marker{ color:var(--accent); }
+
+  /* ---------- Education ---------- */
+  .edu-row{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px;
+    border:1px solid var(--line); padding:26px; border-radius:2px;
+  }
+  .edu-row h3{ margin:0 0 6px; font-size:18px; font-weight:600; }
+  .edu-row .org{ color:var(--dim); font-size:14.5px; }
+  .edu-row .when{ font-family:'IBM Plex Mono',monospace; color:var(--accent-2); font-size:13.5px; white-space:nowrap; }
+
+  /* ---------- Contact ---------- */
+  .contact-section{ border-bottom:none; }
+  .contact-top{ max-width:620px; margin-bottom:50px; }
+  .contact-top h2{ font-size:clamp(28px,4.4vw,44px); margin:0 0 16px; font-weight:600; letter-spacing:-0.01em; }
+  .contact-top h2 em{ color:var(--accent); font-style:normal; }
+  .contact-top p{ color:var(--dim); font-size:15.5px; margin:0; }
+  .contact-layout{ display:grid; grid-template-columns:1.2fr 1fr; gap:50px; align-items:start; }
+  form.cform{ display:grid; gap:16px; }
+  .cform .row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .cform label{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--dim); margin-bottom:7px; display:block; }
+  .cform input, .cform textarea{
+    width:100%; background:var(--panel); border:1px solid var(--line); color:var(--text);
+    padding:12px 14px; border-radius:2px; font-family:'Space Grotesk',sans-serif; font-size:14.5px;
+  }
+  .cform input:focus, .cform textarea:focus{ outline:none; border-color:var(--accent); }
+  .cform textarea{ resize:vertical; min-height:110px; }
+  .cform button{
+    justify-self:start; margin-top:4px; border:none; cursor:pointer;
+    background:var(--accent); color:#14100A; font-weight:600; font-size:14.5px;
+    padding:13px 24px; border-radius:2px; font-family:'Space Grotesk',sans-serif;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .cform button:hover{ background:#ffc352; transform:translateY(-1px); }
+  .contact-cards{ display:flex; flex-direction:column; gap:14px; }
+  .contact-card{ border:1px solid var(--line); padding:18px 20px; border-radius:2px; }
+  .contact-card .k{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--dim); margin-bottom:7px; display:block; }
+  .contact-card .v{ font-size:15px; text-decoration:none; word-break:break-word; }
+  .contact-card .v:hover{ color:var(--accent); }
+
+  footer{ padding:28px 0 36px; }
+  .foot-row{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--dim); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .work-grid{ grid-template-columns:repeat(2,1fr); }
+    .cap-grid{ grid-template-columns:1fr; }
+    .about-grid{ grid-template-columns:1fr; gap:32px; }
+    .contact-layout{ grid-template-columns:1fr; gap:36px; }
+  }
+  @media (max-width: 760px){
+    .pad{ padding:64px 0; }
+    .hero{ padding-top:60px; }
+    .hero-in{ padding-bottom:44px; }
+    nav#primary-nav{
+      position:fixed; inset:0; top:68px;
+      background-color:#0B0E13;
+      box-shadow:0 0 0 100vmax #0B0E13 inset;
+      display:flex; align-items:flex-start; justify-content:flex-start;
+      padding:28px clamp(20px,4vw,32px);
+      transform:translateX(100%); transition:transform .25s ease;
+      z-index:200;
+      pointer-events:none;
+    }
+    nav#primary-nav.open{ pointer-events:auto; }
+    nav#primary-nav.open{ transform:translateX(0); }
+    nav#primary-nav ul{ flex-direction:column; gap:22px; width:100%; }
+    nav#primary-nav a{ font-size:16px; }
+    .burger{ display:flex; }
+    .work-grid{ grid-template-columns:1fr; }
+    .work-cell{ border-bottom:1px solid var(--line-soft); }
+    .job{ grid-template-columns:1fr; gap:8px; }
+    .job .when{ padding-top:0; }
+    .edu-row{ flex-direction:column; align-items:flex-start; }
+    .cform .row2{ grid-template-columns:1fr; }
+    .tick2{ padding:0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <a href="#top" class="brand">RUKHSAR<span>.</span></a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about" data-nav>About</a></li>
+        <li><a href="#capabilities" data-nav>Capabilities</a></li>
+        <li><a href="#experience" data-nav>Experience</a></li>
+        <li><a href="#education" data-nav>Education</a></li>
+        <li><a href="#contact" data-nav>Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-in">
+        <p class="kicker">Performance Creative Analyst · Ads Operations · Media Buyer</p>
+        <h1>Campaigns built for <em>ROAS</em>, not impressions.</h1>
+        <p class="lede">I run high-volume paid social and PPC campaigns across Meta Ads and Native Ads for growing brands — owning strategy end to end, from creative testing through budget pacing and performance reporting.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:rukhsarofficial1380@gmail.com">Get in Touch</a>
+          <a class="btn ghost" href="https://linkedin.com/in/rukhsar-shamoonofficial1380" target="_blank" rel="noopener">View LinkedIn</a>
+        </div>
+        <p class="contact-line">Sargodha, Punjab, Pakistan &nbsp;·&nbsp; +92 309 893 4570 &nbsp;·&nbsp; <a href="mailto:rukhsarofficial1380@gmail.com">rukhsarofficial1380@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section class="pad">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How I Work</p>
+        <h2>Four principles behind every campaign.</h2>
+      </div>
+      <div class="work-grid">
+        <div class="work-cell">
+          <div class="n mono">01</div>
+          <h3>Test before scaling</h3>
+          <p>Structured A/B tests on creative, copy, and targeting establish what works before budget moves behind it.</p>
+        </div>
+        <div class="work-cell">
+          <div class="n mono">02</div>
+          <h3>Data as the compass</h3>
+          <p>Weekly ROAS, CPA, and CTR review drives the next creative decision rather than justifying the last one.</p>
+        </div>
+        <div class="work-cell">
+          <div class="n mono">03</div>
+          <h3>Document what wins</h3>
+          <p>Standardized workflows mean learnings compound across accounts instead of resetting with every campaign.</p>
+        </div>
+        <div class="work-cell">
+          <div class="n mono">04</div>
+          <h3>Compliance by design</h3>
+          <p>Meta policy compliance is built into creative and campaign setup from the start, not checked after launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="set">
+        <span class="tick2"><b>Meta Ads Manager</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Native Ads (PPC)</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>ROAS</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CPA</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CPM</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CTR</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Creative Testing</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Audience Segmentation</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Retargeting</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Budget Pacing</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CRO</b><span class="dia">◆</span></span>
+      </div>
+      <div class="set">
+        <span class="tick2"><b>Meta Ads Manager</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Native Ads (PPC)</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>ROAS</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CPA</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CPM</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CTR</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Creative Testing</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Audience Segmentation</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Retargeting</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>Budget Pacing</b><span class="dia">◆</span></span>
+        <span class="tick2"><b>CRO</b><span class="dia">◆</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="pad">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>I turn performance data into creative strategy that lowers acquisition cost.</h2>
+          <p>I'm a <strong>Performance Creative Analyst and Ads Operations lead</strong> with three-plus years managing high-volume, multi-platform paid social and PPC campaigns on Meta and Native Ads. My work sits at the intersection of data and creative: I test relentlessly, read what the numbers say, and turn that into creative direction that moves ROAS and CPA.</p>
+          <p>Day to day, I lead cross-functional ad ops teams, keep budgets pacing correctly across accounts, and hold every campaign to Meta's policy standards without slowing execution down. I've standardized workflows that cut turnaround time and built reporting that gives stakeholders a clear read on what's working and why.</p>
+          <p>I studied Information Technology at the University of Sargodha — where the analytical half of this work started, reading data structurally before I ever touched an ad account. If you're hiring for ads operations, PPC, or performance marketing, <strong>let's talk.</strong></p>
+        </div>
+        <div class="focus-box">
+          <span class="k mono">Core Focus</span>
+          <div class="focus-chips">
+            <span>Meta Ads</span><span>Native Ads / PPC</span><span>ROAS</span><span>CPA</span>
+            <span>CTR</span><span>CRO</span><span>A/B Testing</span><span>Ads Ops</span>
+            <span>Budget Pacing</span><span>Team Leadership</span><span>Excel</span><span>Reporting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section id="capabilities" class="pad">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Capabilities</p>
+        <h2>What I own end to end.</h2>
+        <p>From the weekly performance read to the workflow change that makes the next campaign faster.</p>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-cell">
+          <div class="n mono">01</div>
+          <h3>Paid Social &amp; PPC</h3>
+          <p>Meta Ads Manager and Native Ads campaign setup, audience segmentation, retargeting, and ongoing optimization across the funnel.</p>
+        </div>
+        <div class="cap-cell">
+          <div class="n mono">02</div>
+          <h3>Performance Analytics</h3>
+          <p>ROAS, CPA, CPM, and CTR tracked weekly, with conversion rate optimization and budget pacing &amp; scaling decisions built on the data.</p>
+        </div>
+        <div class="cap-cell">
+          <div class="n mono">03</div>
+          <h3>Creative Testing &amp; Compliance</h3>
+          <p>Structured A/B testing on creative and copy, with full Meta policy compliance and QA built into every account.</p>
+        </div>
+        <div class="cap-cell">
+          <div class="n mono">04</div>
+          <h3>Ads Operations Leadership</h3>
+          <p>Leading and mentoring ads ops teams, standardizing workflows, and coordinating cross-functionally with designers and media buyers.</p>
+        </div>
+        <div class="cap-cell">
+          <div class="n mono">05</div>
+          <h3>Project &amp; Resource Management</h3>
+          <p>Resource allocation and agile workflows that keep a portfolio of client accounts moving on schedule and on budget.</p>
+        </div>
+        <div class="cap-cell">
+          <div class="n mono">06</div>
+          <h3>Reporting &amp; Tools</h3>
+          <p>Excel (pivot tables, VLOOKUP), Trello, and PowerPoint, turned into data analysis and reporting stakeholders can act on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="pad">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've done the work.</h2>
+      </div>
+      <div class="timeline">
+        <div class="job">
+          <div class="when mono">2024 — 2026</div>
+          <div>
+            <h3>Head of Ads Operations</h3>
+            <p class="org">Creative Crew · Sargodha, Pakistan</p>
+            <ul>
+              <li>Lead daily ad operations for a portfolio of client accounts, overseeing execution, budget pacing, and QA across platforms.</li>
+              <li>Analyze ROAS, CPA, and CTR weekly to identify optimization opportunities, driving a 25% improvement in campaign efficiency.</li>
+              <li>Manage and mentor an ads operations team, standardizing workflows that improved turnaround time and policy compliance.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when mono">2025 — 2026</div>
+          <div>
+            <h3>PPC Manager</h3>
+            <p class="org">FrontStory · Sargodha, Pakistan</p>
+            <ul>
+              <li>Manage and optimize PPC campaigns across Meta and Native Ads, overseeing monthly budgets of $20,000+.</li>
+              <li>Run continuous A/B tests on creative, copy, and targeting — lifting conversion rates by 22% and cutting CPA by 18%.</li>
+              <li>Report on key performance indicators, turning data insights into actionable recommendations for stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when mono">2023 — 2026</div>
+          <div>
+            <h3>Creative Specialist</h3>
+            <p class="org">FrontStory · Sargodha, Pakistan</p>
+            <ul>
+              <li>Developed and optimized advertising creative assets for paid social campaigns, ensuring full Meta policy compliance.</li>
+              <li>Collaborated with designers and media buyers on data-informed creative variations that improved ad performance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="pad">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Education</p>
+        <h2>Where the analytical foundation started.</h2>
+      </div>
+      <div class="edu-row">
+        <div>
+          <h3>Bachelor of Science, Information Technology</h3>
+          <p class="org mono">University of Sargodha · Sargodha, Pakistan</p>
+        </div>
+        <div class="when">2017 — 2022</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section pad">
+    <div class="wrap">
+      <div class="contact-top">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's build campaigns that <em>perform.</em></h2>
+        <p>Open to Ads Operations, PPC, and Performance Marketing roles. Available for remote, hybrid, and on-site work.</p>
+      </div>
+      <div class="contact-layout">
+        <form class="cform" id="contactForm" action="https://formspree.io/f/xrpbeevq" method="POST">
+          <div class="row2">
+            <div>
+              <label for="cname">Name</label>
+              <input id="cname" name="name" type="text" required>
+            </div>
+            <div>
+              <label for="cemail">Email</label>
+              <input id="cemail" name="email" type="email" required>
+            </div>
+          </div>
+          <div>
+            <label for="csubject">Subject</label>
+            <input id="csubject" name="subject" type="text">
+          </div>
+          <div>
+            <label for="cmessage">Message</label>
+            <textarea id="cmessage" name="message" required></textarea>
+          </div>
+          <button type="submit" id="cformBtn">Send Message</button>
+          <p id="cformStatus" class="mono" style="font-size:13px; color:var(--accent-2); margin:4px 0 0; display:none;"></p>
+        </form>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <span class="k mono">Email</span>
+            <a class="v" href="mailto:rukhsarofficial1380@gmail.com">rukhsarofficial1380@gmail.com</a>
+          </div>
+          <div class="contact-card">
+            <span class="k mono">Phone</span>
+            <a class="v" href="tel:+923098934570">+92 309 893 4570</a>
+          </div>
+          <div class="contact-card">
+            <span class="k mono">LinkedIn</span>
+            <a class="v" href="https://linkedin.com/in/rukhsar-shamoonofficial1380" target="_blank" rel="noopener">linkedin.com/in/rukhsar-shamoonofficial1380</a>
+          </div>
+          <div class="contact-card">
+            <span class="k mono">Location</span>
+            <span class="v">Sargodha, Punjab, Pakistan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>Rukhsar Shamoon / Performance Creative Analyst</span>
+      <span>© 2026 · All Rights Reserved</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // Mobile nav toggle
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('primary-nav');
+    if (burger && nav) {
+      burger.addEventListener('click', function(){
+        var open = nav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('#primary-nav a').forEach(function(a){
+        a.addEventListener('click', function(){
+          nav.classList.remove('open');
+          burger.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+
+    // Contact form -> submits directly to Formspree, which emails Rukhsar the message
+    var cform = document.getElementById('contactForm');
+    if (cform) {
+      var cformBtn = document.getElementById('cformBtn');
+      var cformStatus = document.getElementById('cformStatus');
+
+      cform.addEventListener('submit', function(e){
+        e.preventDefault();
+        cformBtn.disabled = true;
+        cformBtn.textContent = 'Sending…';
+        cformStatus.style.display = 'none';
+
+        fetch(cform.action, {
+          method: 'POST',
+          body: new FormData(cform),
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response){
+          if (response.ok) {
+            cform.reset();
+            cformStatus.textContent = 'Message sent — thank you, I\'ll reply soon.';
+            cformStatus.style.color = 'var(--accent-2)';
+          } else {
+            throw new Error('Submission failed');
+          }
+        }).catch(function(){
+          cformStatus.textContent = 'Something went wrong. Please email rukhsarofficial1380@gmail.com directly.';
+          cformStatus.style.color = 'var(--accent)';
+        }).finally(function(){
+          cformBtn.disabled = false;
+          cformBtn.textContent = 'Send Message';
+          cformStatus.style.display = 'block';
+        });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
